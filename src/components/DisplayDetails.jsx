@@ -90,7 +90,6 @@ const DisplayDetails = (props) => {
   } else {
     return (
       <>
-        {/* <Header /> */}
         <Skeleton type={"details"} />;
       </>
     );
