@@ -12,6 +12,8 @@ export const LandingStyledHeader = styled(StyledHeader)`
     div:nth-child(2) {
       display: none;
     }
+    /* height: 100vh; */
+    overflow: hidden;
   }
 `;
 

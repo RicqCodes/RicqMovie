@@ -22,6 +22,10 @@ export const Logo = styled.div`
   font-size: 3rem;
   font-weight: 600;
   font-family: "Rubik Distressed", cursive;
+
+  @media (max-width: 50em) {
+    font-size: 2rem;
+  }
 `;
 
 export const UserImage = styled.div`
