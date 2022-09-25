@@ -29,11 +29,11 @@ import useAuthStatus from "../hooks/useAuthStatus";
 
 const Header = () => {
   const auth = getAuth();
-  const data = useSelector(getAllMovies);
+  // const data = useSelector(getAllMovies);
   const dispatch = useDispatch();
   const [display, setDisplay] = useState(false);
   const [isFloatOpen, setIsFloatOpen] = useState(false);
-  const [searchParams, setSearchParams] = useSearchParams();
+  // const [searchParams, setSearchParams] = useSearchParams();
   const [term, setTerm] = useState("");
   const navigate = useNavigate();
   const { loggedIn } = useAuthStatus();
@@ -45,7 +45,7 @@ const Header = () => {
   // const user = data.user;
   const user = auth.currentUser;
   const onInput = (e) => {
-    setSearchParams({ q: e.target.value });
+    // setSearchParams({ q: e.target.value });
     setTerm(e.target.value);
   };
 
