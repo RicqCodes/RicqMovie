@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import {
   StyledHeader,
@@ -21,7 +21,6 @@ import userImage from "../images/user.png";
 import {
   addText,
   fetchAsyncSearch,
-  getAllMovies,
   removeUser,
 } from "../ReduxConfig/movieSlice";
 import { getAuth } from "firebase/auth";
