@@ -205,7 +205,7 @@ export const {
   removeUser,
 } = movieSlice.actions;
 
-export const getAllMovies = (state) => state.movie;
+export const getAllMovies = (state) => state.movies;
 export const getAllSeries = (state) => state.series;
 export const getText = (state) => state.searchText;
 export const getFeatured = (state) => state.featured;
