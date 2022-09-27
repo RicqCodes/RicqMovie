@@ -6,7 +6,6 @@ import DisplayDetails from "./DisplayDetails";
 
 const FeaturedMovie = () => {
   const movies = useSelector(getAllMovies);
-  console.log(movies);
   const rating = (movies.featured.vote_average / 2).toFixed(1);
 
   return (

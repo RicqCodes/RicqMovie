@@ -6,7 +6,7 @@ const MovieRating = ({ rating }) => {
     <Rating
       style={{ opacity: 1 }}
       name="half-rating-read"
-      defaultValue={+rating}
+      defaultValue={+rating || null}
       precision={0.5}
       size="large"
       readOnly
