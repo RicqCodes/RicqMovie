@@ -65,10 +65,10 @@ const MovieDetails = () => {
     }
 
     console.log(movies.searchResult);
-    const searchMovie = movies.searchResult?.results.find(
+    const searchMovie = movies.searchResult?.results?.find(
       (movie) => `${movie.media_type}` === "movie" && `${movie.id}` === imdbID
     );
-    const searchSeries = movies.searchResult?.results.find(
+    const searchSeries = movies.searchResult?.results?.find(
       (movie) => `${movie.media_type}` === "tv" && `${movie.id}` === imdbID
     );
 
