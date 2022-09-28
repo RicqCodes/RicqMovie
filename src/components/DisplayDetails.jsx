@@ -26,7 +26,7 @@ const DisplayDetails = (props) => {
   const movieGenre = movie.movieGenre.genres;
   // const seriesGenre = movie.seriesGenre.genres;
 
-  const genreId = movieGenre.find((genre, id) => {
+  const genreId = movieGenre?.find((genre, id) => {
     return genre.id === +props.movies.genre_ids?.[0];
   });
 
