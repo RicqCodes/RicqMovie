@@ -30,7 +30,7 @@ const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    email: location.state?.input || "",
     password: "",
   });
 
@@ -118,7 +118,7 @@ const Signup = () => {
               placeholder="Email"
               required
               id="email"
-              value={location.state?.input || email}
+              value={email}
               onChange={onChange}
             />
           </Input>
