@@ -26,6 +26,7 @@ import Oauth from "../components/Oauth";
 
 // Signup Page Component
 const Signup = () => {
+  const location = useLocation();
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -33,8 +34,6 @@ const Signup = () => {
     email: location.state?.input || "",
     password: "",
   });
-
-  const location = useLocation();
 
   const { name, email, password } = formData;
 
