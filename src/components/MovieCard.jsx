@@ -11,12 +11,13 @@ import {
 } from "../styles/MovieCard.styled";
 import Rating from "./Rating";
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, type }) => {
   const rating = (movie.vote_average / 2).toFixed(1);
 
   return (
     <CardItem borderRadius="2rem" marginLeft="1rem">
-      <Link to={`/movie/${movie.id}`}>
+      {/* { type === 'movies' ? <Link to={`movie/${movie.id}`}> : <Link to={`tv/${movie.id}`}> } */}
+      <Link to={type === "movies" ? `/movie/${movie.id}` : `/tv/${movie.id}`}>
         <CardInner>
           <CardTop height="35rem" width="22rem">
             <img

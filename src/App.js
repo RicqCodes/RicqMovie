@@ -52,6 +52,7 @@ const App = () => {
             </Route>
             <Route path="/browse" element={<Home />} />
             <Route path="/movie/:imdbID" element={<MovieDetails />} />
+            <Route path="/tv/:imdbID" element={<MovieDetails />} />
             <Route path="/profile" element={<PrivateRouter />}>
               <Route path="/profile" element={<Profile />} />
             </Route>

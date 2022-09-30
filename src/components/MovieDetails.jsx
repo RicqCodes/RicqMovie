@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 import {
   fetchAysncDetailsMovies,
@@ -24,6 +24,10 @@ import useAuthStatus from "../hooks/useAuthStatus";
 
 const MovieDetails = () => {
   const { imdbID } = useParams();
+
+  const location = useLocation();
+  const currentLocation = location.pathname.split("/")[1];
+  // console.log(currentLocation);
   const dispatch = useDispatch();
   const [type, setType] = useState("");
   const { loading } = useAuthStatus();
@@ -33,33 +37,33 @@ const MovieDetails = () => {
   const rating = (movies.movieDetails.vote_average / 2).toFixed(1);
 
   useEffect(() => {
-    const topMovies = movies.movies.results.find(
-      (movie) => `${movie.id}` === imdbID
-    );
+    // const topMovies = movies.movies.results?.find(
+    //   (movie) => `${movie.id}` === imdbID
+    // );
 
-    if (topMovies) {
+    if (currentLocation === "movie") {
       setType("Movie");
       dispatch(fetchAysncDetailsMovies(imdbID));
       dispatch(fetchAysncSimilarMovies(imdbID));
     }
-    const topSeries = movies.series.results.find(
-      (movie) => `${movie.id}` === imdbID
-    );
+    // const topSeries = movies.series.results?.find(
+    //   (movie) => `${movie.id}` === imdbID
+    // );
 
-    if (topSeries) {
+    if (currentLocation === "tv") {
       setType("Series");
       dispatch(fetchAysncDetailsSeries(imdbID));
       dispatch(fetchAysncSimilarSeries(imdbID));
     }
 
-    const similar = movies.similar.results.find(
-      (movie) => `${movie.id}` === imdbID
-    );
+    // const similar = movies.similar.results?.find(
+    //   (movie) => `${movie.id}` === imdbID
+    // );
 
-    if (similar && type === "Movie") {
+    if (type === "Movie") {
       dispatch(fetchAysncDetailsMovies(imdbID));
       dispatch(fetchAysncSimilarMovies(imdbID));
-    } else if (similar && type === "Series") {
+    } else if (type === "Series") {
       dispatch(fetchAysncDetailsSeries(imdbID));
       dispatch(fetchAysncSimilarSeries(imdbID));
     }

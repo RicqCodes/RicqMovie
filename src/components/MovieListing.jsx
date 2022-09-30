@@ -18,7 +18,7 @@ const MovieListing = () => {
   let renderMovies =
     movies.movies.page === 1 ? (
       movies.movies.results.map((movie, index) => {
-        return <MovieCard key={index} movie={movie} />;
+        return <MovieCard type={"movies"} key={index} movie={movie} />;
       })
     ) : (
       <MoviesError>
@@ -29,7 +29,7 @@ const MovieListing = () => {
   let renderSeries =
     movies.series.page === 1 ? (
       movies.series.results.map((movie, index) => {
-        return <MovieCard key={index} movie={movie} />;
+        return <MovieCard type={"series"} key={index} movie={movie} />;
       })
     ) : (
       <MoviesError>
