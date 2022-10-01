@@ -17,7 +17,13 @@ const MovieCard = ({ movie, type }) => {
   return (
     <CardItem borderRadius="2rem" marginLeft="1rem">
       {/* { type === 'movies' ? <Link to={`movie/${movie.id}`}> : <Link to={`tv/${movie.id}`}> } */}
-      <Link to={type === "movies" ? `/movie/${movie.id}` : `/tv/${movie.id}`}>
+      <Link
+        to={
+          type === "movies" || "movie"
+            ? `/movie/${movie.id}`
+            : `/tv/${movie.id}`
+        }
+      >
         <CardInner>
           <CardTop height="35rem" width="22rem">
             <img

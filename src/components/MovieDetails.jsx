@@ -27,7 +27,7 @@ const MovieDetails = () => {
 
   const location = useLocation();
   const currentLocation = location.pathname.split("/")[1];
-  // console.log(currentLocation);
+  console.log(currentLocation);
   const dispatch = useDispatch();
   const [type, setType] = useState("");
   const { loading } = useAuthStatus();
@@ -60,13 +60,13 @@ const MovieDetails = () => {
     //   (movie) => `${movie.id}` === imdbID
     // );
 
-    if (type === "Movie") {
-      dispatch(fetchAysncDetailsMovies(imdbID));
-      dispatch(fetchAysncSimilarMovies(imdbID));
-    } else if (type === "Series") {
-      dispatch(fetchAysncDetailsSeries(imdbID));
-      dispatch(fetchAysncSimilarSeries(imdbID));
-    }
+    // if (type === "Movie") {
+    //   dispatch(fetchAysncDetailsMovies(imdbID));
+    //   dispatch(fetchAysncSimilarMovies(imdbID));
+    // } else if (type === "Series") {
+    //   dispatch(fetchAysncDetailsSeries(imdbID));
+    //   dispatch(fetchAysncSimilarSeries(imdbID));
+    // }
 
     console.log(movies.searchResult);
     const searchMovie = movies.searchResult?.results?.find(
@@ -98,7 +98,7 @@ const MovieDetails = () => {
   let renderSimilarMovies =
     movies.similar.page === 1 ? (
       movies.similar.results.map((movie, index) => {
-        return <MovieCard key={index} movie={movie} />;
+        return <MovieCard key={index} movie={movie} type={type} />;
       })
     ) : (
       <MoviesError>
